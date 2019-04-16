@@ -31,7 +31,8 @@ def echo_server(sconn):
         data = sconn.recv()
         print("ECHOING>", data)
         sconn.send(data)
-        if data == b'X' or data == b'exit' or data == b'quit':
+        msg = data.decode('ascii')
+        if msg.lower() == 'x' or msg.lower() == 'exit' or msg.lower() == 'quit':            
             print("Closing connection...")
             sconn.close()
             return
