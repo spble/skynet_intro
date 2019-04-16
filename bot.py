@@ -31,7 +31,7 @@ def p2p_echo():
             # Ensure that what we sent is what we got back
             assert(echo == byte_msg)
             # If the msg is X, then terminate the connection
-            if msg.lower() == 'x' or msg.lower() == "exit" or msg.lower() == "quit":
+            if msg.lower() == 'X' or msg.lower() == "exit" or msg.lower() == "quit":
                 sconn.close()
                 break
     except socket.error:
